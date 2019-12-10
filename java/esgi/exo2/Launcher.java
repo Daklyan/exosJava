@@ -6,6 +6,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.time.Duration;
 import java.time.Instant;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Launcher {
@@ -37,9 +38,13 @@ public class Launcher {
         return map;
     }
 
-    public static int getAverage() {
-        int res = -1;
-        return res;
+    public static int getAverage(ArrayList<String> arr) {
+        int res = 0;
+        int i;
+        for( i = 0; i < arr.size(); ++i){
+            res += Integer.parseInt(arr.get(i));
+        }
+        return res /= arr.size();
     }
 
     public static int getScore(HashMap<String, String> map, String email) {
